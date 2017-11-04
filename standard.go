@@ -34,6 +34,9 @@ func (s *StandardClient) Status() error {
         return s.base.Status()
 }
 
+func (s *StandardClient) Close() {
+}
+
 func (s *StandardClient) GetType(metric string) MetricType {
         if m, ok := s.metrics[metric]; ok {
                 return m.metricType

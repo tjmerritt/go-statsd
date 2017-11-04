@@ -69,9 +69,10 @@ type ServiceCheckInfo struct {
 }
 
 type Client interface {
-        // Cloning
-        Clone(config... *Config) Client
+        // Housekeeping
         Status() error
+        Clone(config... *Config) Client
+        Close()
 
         // Counters
         Add(metric string, amount int, tags... string)

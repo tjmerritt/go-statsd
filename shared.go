@@ -26,6 +26,9 @@ func (s *SharedClient) Status() error {
         return s.base.Status()
 }
 
+func (s *SharedClient) Close() {
+}
+
 func (s *SharedClient) GetType(metric string) MetricType {
         s.lock.Lock()
         defer s.lock.Unlock()
